@@ -8,9 +8,4 @@ export const pool = new Pool({
     database: "challenge",
     ssl: true,
 });
-async function connectDatabase() {
-    let queryResult = await pool.query(`SELECT * FROM "blogs" LIMIT 100`);
-    console.log(queryResult.rows);
-}
-connectDatabase();
 //# sourceMappingURL=database.js.map
