@@ -11,5 +11,5 @@ export const getBlogs = async (page) => {
         console.log(err);
     }
 };
-getBlogs(1);
+getBlogs(60);
 //# sourceMappingURL=getBlogs.js.map
