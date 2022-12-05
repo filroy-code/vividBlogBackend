@@ -1,5 +1,6 @@
 import { getBlogs } from "../database/getBlogs.js";
 import { getSingleBlogPost } from "../database/getSingleBlogPost.js";
+import { getBlogCount } from "../database/getBlogCount.js";
 import { Request, Response } from "express";
 
 export const welcome = function (req: Request, res: Response) {
@@ -12,7 +13,8 @@ export const get_blogs = async function (req: Request, res: Response) {
 
   try {
     const blogList = await getBlogs(pageNumber);
-    res.status(200).json({ blogList });
+    const blogCount = await getBlogCount();
+    res.status(200).json({ blogList, blogCount });
   } catch (err) {
     res.status(500).send("There was an error");
     console.log(err);
