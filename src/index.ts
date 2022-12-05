@@ -1,14 +1,12 @@
-import fs from "fs";
-import express, { Express, Request, Response } from "express";
+import express, { Express } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 dotenv.config();
-import config from "config";
 import { blogsRouter } from "./routes/blogs.js";
 
 const app: Express = express();
 
-const allowedOrigins = "http://localhost:3000";
+const allowedOrigins = "*";
 const options: cors.CorsOptions = {
   origin: allowedOrigins,
   methods: "GET",

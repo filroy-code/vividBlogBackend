@@ -24,7 +24,10 @@ export const pool = new Pool({
     process.env.NODE_ENV === "production"
       ? process.env.DB_DATABASE
       : "challenge",
-  ssl: true,
+  ssl:
+    process.env.NODE_ENV === "production"
+      ? process.env.DB_SSL === "true" // if DB_SSL is "true", this expression evaluates to the boolean true
+      : true,
 });
 
 pool.on("error", (err, client) => {
