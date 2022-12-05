@@ -10,8 +10,8 @@ export const blogsRouter = express.Router();
 // welcome to backend server
 blogsRouter.get("/", welcome);
 
-// fetches blog posts based on pagination number
+// fetches a group of blog posts based on pagination number
 blogsRouter.get("/blogs/search/:pageNumber", get_blogs);
 
-// fetches single blog post
+// fetches a single blog post based on URL slug
 blogsRouter.get("/blogs/posts/:slug", get_single_blog_post);
